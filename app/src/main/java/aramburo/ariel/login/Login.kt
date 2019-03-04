@@ -10,17 +10,19 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         bt_CrearUser.setOnClickListener {
             val intent = Intent(this, Registro::class.java)
             intent.putExtra("user", et_Usuario.text.toString())
-            intent.putExtra("pass", et_Pass.text.toString())
-            startActivity(intent)
+            intent.putExtra("pass", et_Usuario.text.toString())
+            startActivityForResult(intent, 123)
         }
 
         bt_Ingresar.setOnClickListener {
             val intent = Intent(this, Bienvenido::class.java)
             intent.putExtra("user", et_Usuario.text.toString())
-            startActivity(intent)
+            intent.putExtra("pass", et_Usuario.text.toString())
+            startActivityForResult(intent, 123)
 
         }
     }
@@ -30,6 +32,7 @@ class Login : AppCompatActivity() {
         if (data != null) {
             val user: String = data.getStringExtra("user")
             val pass: String = data.getStringExtra("pass")
+
             et_Usuario.setText(user)
             et_Pass.setText(pass)
         }

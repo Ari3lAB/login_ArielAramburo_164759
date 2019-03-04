@@ -20,9 +20,11 @@ class Registro : AppCompatActivity() {
         et_pass.setText(pass)
 
         bt_aceptar.setOnClickListener {
-            val resultIntent = Intent(this, Login::class.java)
-            intent.putExtra("user", et_user.text.toString())
-            intent.putExtra("pass",et_pass.text.toString())
+            val resultIntent = Intent()
+
+            resultIntent.putExtra("user", et_user.text.toString())
+            resultIntent.putExtra("pass", et_pass.text.toString())
+
             setResult(Activity.RESULT_OK, resultIntent)
 
             finish()

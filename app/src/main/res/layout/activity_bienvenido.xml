@@ -53,7 +53,7 @@
             <Button android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="24dp"
-                    android:text="Cerrar sesion" android:id="@+id/bt_cerrarSess" android:textAllCaps="false"/>
+                    android:text="Cerrar sesion" android:id="@+id/bt_cerrarSess"/>
 
         </LinearLayout>
 
